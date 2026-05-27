@@ -7,27 +7,28 @@
 <meta name="description" content="Branded Beauty — Licensed cosmetologist in St. Louis, MO. Hair, nails, lashes and more. Book your appointment today.">
 <link rel="icon" type="image/png" href="/logo.png">
 <link rel="apple-touch-icon" href="/logo.png">
-<meta name="theme-color" content="#c45978">
+<meta name="theme-color" content="#fdf8f0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
+    --cream:      #fdf8f0;
+    --soft-cream: #faf3e8;
+    --blush:      #fce8f2;
+    --baby-pink:  #f8d7e8;
+    --pink:       #f0a8c8;
+    --deep-pink:  #d4789a;
+    --dark-pink:  #b05878;
+    --black:      #0d0d0d;
+    --charcoal:   #1e1e1e;
+    --gray:       #6a6060;
     --white:      #ffffff;
-    --soft-white: #fdf7f9;
-    --blush:      #fce8f0;
-    --rose:       #f4c2d4;
-    --pink:       #e07fa0;
-    --deep-pink:  #c45978;
-    --dark-pink:  #a03458;
-    --black:      #1a0a10;
-    --charcoal:   #2d1520;
-    --gray:       #7a6070;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; overflow-x: hidden; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--black); overflow-x: hidden; width: 100%; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--black); overflow-x: hidden; width: 100%; }
   img { max-width: 100%; height: auto; display: block; }
 
   /* NAV */
@@ -35,7 +36,7 @@
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; justify-content: space-between; align-items: center;
     padding: 1rem 3rem;
-    background: rgba(255,255,255,0.95);
+    background: rgba(253,248,240,0.96);
     backdrop-filter: blur(16px);
     border-bottom: 1px solid rgba(224,127,160,0.15);
   }
@@ -54,9 +55,9 @@
   .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .hamburger.open span:nth-child(2) { opacity: 0; }
   .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-  .mobile-menu { display: none; position: fixed; inset: 0; background: rgba(26,10,16,0.97); z-index: 200; flex-direction: column; align-items: center; justify-content: center; gap: 2rem; }
+  .mobile-menu { display: none; position: fixed; inset: 0; background: rgba(13,13,13,0.97); z-index: 200; flex-direction: column; align-items: center; justify-content: center; gap: 2rem; }
   .mobile-menu.open { display: flex; }
-  .mobile-menu-brand { font-family: 'Dancing Script', cursive; font-size: 2.8rem; font-weight: 700; color: var(--rose); margin-bottom: 0.5rem; }
+  .mobile-menu-brand { font-family: 'Dancing Script', cursive; font-size: 2.8rem; font-weight: 700; color: var(--baby-pink); margin-bottom: 0.5rem; }
   .mobile-menu a { font-size: 1.3rem; color: var(--white); text-decoration: none; letter-spacing: 0.05em; }
   .mobile-menu a.book-link { font-family: 'DM Sans', sans-serif; font-size: 1rem; padding: 0.8rem 2.2rem; background: var(--deep-pink); border-radius: 30px; margin-top: 0.5rem; font-weight: 500; }
   .mobile-menu-close { position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; color: rgba(255,255,255,0.5); font-size: 2rem; cursor: pointer; line-height: 1; }
@@ -64,36 +65,36 @@
   /* HERO */
   .hero {
     min-height: 100vh;
-    background: linear-gradient(160deg, #1a0a10 0%, #3d1228 45%, #7a2a4a 80%, #c45978 100%);
+    background: linear-gradient(160deg, #0d0d0d 0%, #1e1e1e 50%, #2e1a22 80%, #3d2030 100%);
     display: flex; align-items: center; justify-content: center;
     text-align: center; padding: 9rem 2rem 5rem;
     position: relative; overflow: hidden;
   }
-  .hero::before { content: ''; position: absolute; top: -20%; right: -10%; width: 600px; height: 600px; border-radius: 50%; background: rgba(244,194,212,0.06); }
-  .hero::after  { content: ''; position: absolute; bottom: -25%; left: -15%; width: 700px; height: 700px; border-radius: 50%; background: rgba(244,194,212,0.04); }
+  .hero::before { content: ''; position: absolute; top: -20%; right: -10%; width: 600px; height: 600px; border-radius: 50%; background: rgba(248,215,232,0.05); }
+  .hero::after  { content: ''; position: absolute; bottom: -25%; left: -15%; width: 700px; height: 700px; border-radius: 50%; background: rgba(248,215,232,0.03); }
 
   .petal { position: absolute; border-radius: 50% 0 50% 0; opacity: 0.12; animation: drift 8s ease-in-out infinite; }
-  .petal:nth-child(1) { width: 14px; height: 14px; background: var(--rose); top: 18%; left: 12%; animation-delay: 0s; }
+  .petal:nth-child(1) { width: 14px; height: 14px; background: var(--baby-pink); top: 18%; left: 12%; animation-delay: 0s; }
   .petal:nth-child(2) { width: 9px;  height: 9px;  background: var(--pink); top: 65%; left: 7%;  animation-delay: 1.5s; }
-  .petal:nth-child(3) { width: 12px; height: 12px; background: var(--rose); top: 25%; right: 10%; animation-delay: 2.5s; }
+  .petal:nth-child(3) { width: 12px; height: 12px; background: var(--baby-pink); top: 25%; right: 10%; animation-delay: 2.5s; }
   .petal:nth-child(4) { width: 7px;  height: 7px;  background: var(--pink); top: 75%; right: 18%; animation-delay: 0.8s; }
-  .petal:nth-child(5) { width: 10px; height: 10px; background: var(--rose); top: 45%; left: 25%; animation-delay: 3s; }
+  .petal:nth-child(5) { width: 10px; height: 10px; background: var(--baby-pink); top: 45%; left: 25%; animation-delay: 3s; }
   .petal:nth-child(6) { width: 6px;  height: 6px;  background: var(--pink); top: 55%; right: 30%; animation-delay: 1s; }
   @keyframes drift { 0%,100% { transform: translateY(0) rotate(0deg); opacity: 0.12; } 50% { transform: translateY(-18px) rotate(15deg); opacity: 0.25; } }
 
   .hero-content { position: relative; z-index: 2; max-width: 800px; }
-  .hero-eyebrow { display: inline-block; padding: 0.35rem 1.2rem; border: 1px solid rgba(244,194,212,0.4); color: var(--rose); font-size: 0.7rem; letter-spacing: 0.28em; text-transform: uppercase; margin-bottom: 1.5rem; border-radius: 30px; }
+  .hero-eyebrow { display: inline-block; padding: 0.35rem 1.2rem; border: 1px solid rgba(244,194,212,0.4); color: var(--baby-pink); font-size: 0.7rem; letter-spacing: 0.28em; text-transform: uppercase; margin-bottom: 1.5rem; border-radius: 30px; }
   .hero-title { font-family: 'Dancing Script', cursive; font-size: clamp(3rem, 8vw, 6.5rem); font-weight: 700; color: var(--white); line-height: 1.05; margin-bottom: 1.25rem; }
-  .hero-title span { color: var(--rose); }
+  .hero-title span { color: var(--baby-pink); }
   .hero-sub { font-size: 1rem; font-weight: 300; line-height: 1.8; color: rgba(255,255,255,0.7); max-width: 520px; margin: 0 auto 2.5rem; }
   .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
   .btn-pink { padding: 0.9rem 2.5rem; background: var(--deep-pink); color: var(--white); text-decoration: none; font-size: 0.84rem; font-weight: 500; letter-spacing: 0.06em; border-radius: 30px; box-shadow: 0 6px 20px rgba(196,89,120,0.45); transition: all 0.3s; }
   .btn-pink:hover { background: var(--dark-pink); transform: translateY(-2px); }
   .btn-outline { padding: 0.9rem 2.5rem; background: transparent; color: var(--white); text-decoration: none; font-size: 0.84rem; font-weight: 400; letter-spacing: 0.06em; border: 1px solid rgba(255,255,255,0.35); border-radius: 30px; transition: all 0.3s; }
-  .btn-outline:hover { background: rgba(255,255,255,0.08); border-color: var(--rose); }
+  .btn-outline:hover { background: rgba(255,255,255,0.08); border-color: var(--baby-pink); }
 
   .hero-badges { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-top: 4rem; padding-top: 2.5rem; border-top: 1px solid rgba(255,255,255,0.1); }
-  .badge-num { font-family: 'Dancing Script', cursive; font-size: 2.2rem; font-weight: 700; color: var(--rose); display: block; line-height: 1; }
+  .badge-num { font-family: 'Dancing Script', cursive; font-size: 2.2rem; font-weight: 700; color: var(--baby-pink); display: block; line-height: 1; }
   .badge-lbl { font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-top: 0.3rem; }
 
   /* TRUST BAR */
@@ -108,10 +109,10 @@
   .section-sub { font-size: 0.88rem; font-weight: 300; line-height: 1.85; color: var(--gray); max-width: 520px; margin-bottom: 3rem; }
 
   /* SERVICES */
-  .services-bg { background: var(--soft-white); }
+  .services-bg { background: var(--soft-cream); }
   .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-  .service-card { background: var(--white); border-radius: 16px; padding: 2rem 1.75rem; border: 1px solid var(--blush); transition: all 0.35s; box-shadow: 0 2px 12px rgba(196,89,120,0.06); }
-  .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(196,89,120,0.14); border-color: var(--rose); }
+  .service-card { background: var(--cream); border-radius: 16px; padding: 2rem 1.75rem; border: 1px solid var(--blush); transition: all 0.35s; box-shadow: 0 2px 12px rgba(196,89,120,0.06); }
+  .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(196,89,120,0.14); border-color: var(--baby-pink); }
   .service-card-name { font-family: 'Dancing Script', cursive; font-size: 1.6rem; font-weight: 700; color: var(--charcoal); margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--blush); }
   .service-card-list { list-style: none; }
   .service-card-list li { font-size: 0.82rem; font-weight: 300; color: var(--gray); padding: 0.32rem 0; border-bottom: 1px solid var(--blush); display: flex; align-items: center; gap: 0.6rem; }
@@ -121,29 +122,29 @@
 
   /* ABOUT */
   .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
-  .about-img-box { aspect-ratio: 4/5; border-radius: 24px; background: linear-gradient(145deg, var(--blush) 0%, var(--rose) 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+  .about-img-box { aspect-ratio: 4/5; border-radius: 24px; background: linear-gradient(145deg, var(--cream) 0%, var(--blush) 100%); border: 1px solid var(--baby-pink); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
   .about-img-placeholder { font-family: 'Dancing Script', cursive; font-size: 7rem; font-weight: 700; color: rgba(196,89,120,0.2); user-select: none; }
-  .about-img-badge { position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%); background: var(--white); border-radius: 12px; padding: 0.75rem 1.25rem; text-align: center; box-shadow: 0 4px 20px rgba(196,89,120,0.2); white-space: nowrap; }
+  .about-img-badge { position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%); background: var(--cream); border-radius: 12px; padding: 0.75rem 1.25rem; text-align: center; box-shadow: 0 4px 20px rgba(196,89,120,0.2); white-space: nowrap; }
   .about-img-badge .badge-school { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--pink); font-weight: 500; }
   .about-img-badge .badge-name { font-family: 'Dancing Script', cursive; font-size: 1.2rem; font-weight: 700; color: var(--charcoal); margin-top: 1px; }
   .about-creds { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
-  .cred { display: flex; align-items: flex-start; gap: 1rem; padding: 1rem 1.25rem; background: var(--soft-white); border-radius: 12px; border-left: 3px solid var(--pink); }
+  .cred { display: flex; align-items: flex-start; gap: 1rem; padding: 1rem 1.25rem; background: var(--soft-cream); border-radius: 12px; border-left: 3px solid var(--pink); }
   .cred-marker { width: 8px; height: 8px; border-radius: 50%; background: var(--pink); flex-shrink: 0; margin-top: 6px; }
   .cred-title { font-size: 0.84rem; font-weight: 500; color: var(--charcoal); margin-bottom: 0.15rem; }
   .cred-desc { font-size: 0.78rem; font-weight: 300; color: var(--gray); line-height: 1.5; }
 
   /* INSTAGRAM */
-  .insta-band { background: linear-gradient(135deg, var(--deep-pink) 0%, var(--charcoal) 100%); padding: 3.5rem 3rem; text-align: center; }
+  .insta-band { background: linear-gradient(135deg, var(--charcoal) 0%, var(--black) 100%); padding: 3.5rem 3rem; text-align: center; border-top: 2px solid var(--deep-pink); }
   .insta-band h2 { font-family: 'Dancing Script', cursive; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; color: var(--white); margin-bottom: 0.5rem; }
   .insta-band p { font-size: 0.88rem; color: rgba(255,255,255,0.65); margin-bottom: 1.75rem; }
-  .insta-btn { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.85rem 2.2rem; background: var(--white); color: var(--deep-pink); text-decoration: none; font-size: 0.84rem; font-weight: 600; border-radius: 30px; transition: all 0.3s; box-shadow: 0 4px 16px rgba(0,0,0,0.2); }
+  .insta-btn { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.85rem 2.2rem; background: var(--cream); color: var(--deep-pink); text-decoration: none; font-size: 0.84rem; font-weight: 600; border-radius: 30px; transition: all 0.3s; box-shadow: 0 4px 16px rgba(0,0,0,0.2); }
   .insta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
 
   /* BOOKING CTA */
-  .book-bg { background: var(--blush); }
+  .book-bg { background: var(--cream); border-top: 1px solid var(--baby-pink); }
   .book-cta-inner { max-width: 680px; margin: 0 auto; text-align: center; }
   .book-cta-inner .section-sub { margin: 0 auto 2.5rem; }
-  .book-cta-box { background: var(--white); border-radius: 20px; border: 1px solid var(--rose); padding: 3rem; box-shadow: 0 8px 40px rgba(196,89,120,0.1); }
+  .book-cta-box { background: var(--cream); border-radius: 20px; border: 1px solid var(--baby-pink); padding: 3rem; box-shadow: 0 8px 40px rgba(196,89,120,0.1); }
   .book-cta-box p { font-size: 0.88rem; font-weight: 300; color: var(--gray); line-height: 1.8; margin-bottom: 2rem; }
   .btn-book-lg { display: inline-block; padding: 1rem 3rem; background: linear-gradient(135deg, var(--deep-pink), var(--dark-pink)); color: var(--white); text-decoration: none; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.08em; border-radius: 30px; box-shadow: 0 6px 20px rgba(196,89,120,0.4); transition: all 0.3s; }
   .btn-book-lg:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(196,89,120,0.5); }
@@ -152,7 +153,7 @@
 
   /* FOOTER */
   footer { background: var(--black); padding: 3rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
-  .footer-brand { font-family: 'Dancing Script', cursive; font-size: 2rem; font-weight: 700; color: var(--rose); line-height: 1; }
+  .footer-brand { font-family: 'Dancing Script', cursive; font-size: 2rem; font-weight: 700; color: var(--baby-pink); line-height: 1; }
   .footer-info { font-size: 0.78rem; color: rgba(255,255,255,0.4); line-height: 1.9; margin-top: 0.4rem; }
   .footer-info a { color: rgba(255,255,255,0.4); text-decoration: none; }
   .footer-right { text-align: right; font-size: 0.75rem; color: rgba(255,255,255,0.3); line-height: 1.9; }
