@@ -35,7 +35,7 @@ app.post('/api/book', async (req, res) => {
     <div style="font-family:sans-serif;max-width:600px;margin:0 auto;background:#fff5f8;padding:32px;border-radius:12px;">
       <div style="background:linear-gradient(135deg,#c45978,#1a0a10);padding:22px 24px;border-radius:10px;margin-bottom:24px;">
         <h1 style="color:#fff;margin:0;font-size:22px;letter-spacing:1px;">NEW BOOKING REQUEST ✦</h1>
-        <p style="color:#f4c2d4;margin:5px 0 0;font-size:13px;">KD Beauty · St. Louis, MO</p>
+        <p style="color:#f4c2d4;margin:5px 0 0;font-size:13px;">Branded Beauty · St. Louis, MO</p>
       </div>
 
       <table style="width:100%;border-collapse:collapse;">
@@ -74,14 +74,14 @@ app.post('/api/book', async (req, res) => {
       </table>
 
       <div style="margin-top:20px;">
-        <a href="mailto:${email}?subject=Your KD Beauty Appointment&body=Hi ${fname},%0A%0AThanks for booking! Your appointment for ${service} is confirmed for ${date} at ${time || 'TBD'}.%0A%0ASee you then!%0A— KD Beauty"
+        <a href="mailto:${email}?subject=Your Branded Beauty Appointment&body=Hi ${fname},%0A%0AThanks for booking! Your appointment for ${service} is confirmed for ${date} at ${time || 'TBD'}.%0A%0ASee you then!%0A— Branded Beauty"
           style="display:inline-block;background:#c45978;color:#fff;padding:10px 22px;border-radius:30px;text-decoration:none;font-size:13px;font-weight:600;">
           Reply to ${fname} →
         </a>
       </div>
 
       <div style="margin-top:20px;padding:12px 16px;background:#1a0a10;border-radius:8px;text-align:center;">
-        <p style="color:#f4c2d4;font-size:12px;margin:0;">KD Beauty · St. Louis, MO · 314-738-8282 · @_brandedbeauty_</p>
+        <p style="color:#f4c2d4;font-size:12px;margin:0;">Branded Beauty · St. Louis, MO · 314-738-8282 · @_brandedbeauty_</p>
       </div>
     </div>
   `
@@ -98,7 +98,7 @@ app.post('/api/book', async (req, res) => {
   try {
     const transporter = getTransporter()
     await transporter.sendMail({
-      from: `"KD Beauty" <${GMAIL_USER}>`,
+      from: `"Branded Beauty" <${GMAIL_USER}>`,
       to: NOTIFY_EMAIL,
       replyTo: email,
       subject: `✦ New Booking: ${service} — ${name}`,
@@ -118,5 +118,5 @@ app.get('*', (req, res) => {
 })
 
 app.listen(PORT, () => {
-  console.log(`KD Beauty server running on port ${PORT}`)
+  console.log(`Branded Beauty server running on port ${PORT}`)
 })
