@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>KD Beauty | Licensed Cosmetologist · St. Louis, MO</title>
+<meta name="description" content="KD Beauty — Licensed cosmetologist in St. Louis, MO. Hair, nails, lashes & more. Book your appointment today.">
+<link rel="icon" type="image/png" href="/logo.png">
+<link rel="apple-touch-icon" href="/logo.png">
+<meta name="theme-color" content="#c45978">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --white:      #ffffff;
+    --soft-white: #fdf7f9;
+    --blush:      #fce8f0;
+    --rose:       #f4c2d4;
+    --pink:       #e07fa0;
+    --deep-pink:  #c45978;
+    --dark-pink:  #a03458;
+    --black:      #1a0a10;
+    --charcoal:   #2d1520;
+    --gray:       #7a6070;
+    --light-gray: #e8dde2;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--black); overflow-x: hidden; width: 100%; }
+  img { max-width: 100%; height: auto; display: block; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1rem 3rem;
+    background: rgba(255,255,255,0.94);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(224,127,160,0.15);
+  }
+  .nav-brand { text-decoration: none; }
+  .nav-brand-name {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem; font-weight: 700;
+    color: var(--deep-pink);
+    line-height: 1;
+  }
+  .nav-brand-sub {
+    font-size: 0.58rem; font-weight: 400;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gray); margin-top: 1px;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+  .nav-links a { font-size: 0.82rem; color: var(--charcoal); text-decoration: none; letter-spacing: 0.04em; transition: color 0.3s; }
+  .nav-links a:hover { color: var(--deep-pink); }
+  .nav-cta {
+    padding: 0.55rem 1.4rem;
+    background: var(--deep-pink); color: var(--white) !important;
+    border-radius: 30px; font-weight: 500 !important;
+    transition: background 0.3s !important;
+    box-shadow: 0 4px 14px rgba(196,89,120,0.3);
+  }
+  .nav-cta:hover { background: var(--dark-pink) !important; }
+
+  /* Hamburger */
+  .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+  .hamburger span { display: block; width: 22px; height: 2px; background: var(--deep-pink); border-radius: 2px; transition: all 0.3s; }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mobile-menu {
+    display: none; position: fixed; inset: 0;
+    background: rgba(26,10,16,0.97); z-index: 200;
+    flex-direction: column; align-items: center; justify-content: center; gap: 2rem;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu-brand { font-family: 'Dancing Script', cursive; font-size: 2.8rem; font-weight: 700; color: var(--rose); margin-bottom: 0.5rem; }
+  .mobile-menu a { font-size: 1.3rem; color: var(--white); text-decoration: none; letter-spacing: 0.05em; }
+  .mobile-menu a.book-link {
+    font-family: 'DM Sans', sans-serif; font-size: 1rem;
+    padding: 0.8rem 2.2rem; background: var(--deep-pink);
+    border-radius: 30px; margin-top: 0.5rem; font-weight: 500;
+  }
+  .mobile-menu-close { position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; color: rgba(255,255,255,0.5); font-size: 2rem; cursor: pointer; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(160deg, #1a0a10 0%, #3d1228 45%, #7a2a4a 80%, #c45978 100%);
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; padding: 9rem 2rem 5rem;
+    position: relative; overflow: hidden;
+  }
+  .hero::before { content: ''; position: absolute; top: -20%; right: -10%; width: 600px; height: 600px; border-radius: 50%; background: rgba(244,194,212,0.06); }
+  .hero::after  { content: ''; position: absolute; bottom: -25%; left: -15%; width: 700px; height: 700px; border-radius: 50%; background: rgba(244,194,212,0.04); }
+
+  .petal { position: absolute; border-radius: 50% 0 50% 0; opacity: 0.12; animation: drift 8s ease-in-out infinite; }
+  .petal:nth-child(1) { width: 14px; height: 14px; background: var(--rose); top: 18%; left: 12%; animation-delay: 0s; }
+  .petal:nth-child(2) { width: 9px;  height: 9px;  background: var(--pink); top: 65%; left: 7%;  animation-delay: 1.5s; }
+  .petal:nth-child(3) { width: 12px; height: 12px; background: var(--rose); top: 25%; right: 10%; animation-delay: 2.5s; }
+  .petal:nth-child(4) { width: 7px;  height: 7px;  background: var(--pink); top: 75%; right: 18%; animation-delay: 0.8s; }
+  .petal:nth-child(5) { width: 10px; height: 10px; background: var(--rose); top: 45%; left: 25%; animation-delay: 3s; }
+  .petal:nth-child(6) { width: 6px;  height: 6px;  background: var(--pink); top: 55%; right: 30%; animation-delay: 1s; }
+  @keyframes drift { 0%,100% { transform: translateY(0) rotate(0deg); opacity: 0.12; } 50% { transform: translateY(-18px) rotate(15deg); opacity: 0.25; } }
+
+  .hero-content { position: relative; z-index: 2; max-width: 800px; }
+  .hero-eyebrow {
+    display: inline-block; padding: 0.35rem 1.2rem;
+    border: 1px solid rgba(244,194,212,0.4);
+    color: var(--rose); font-size: 0.7rem; letter-spacing: 0.28em;
+    text-transform: uppercase; margin-bottom: 1.5rem; border-radius: 30px;
+  }
+  .hero-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-weight: 700; color: var(--white);
+    line-height: 1.05; margin-bottom: 1.25rem;
+  }
+  .hero-title span { color: var(--rose); }
+  .hero-sub {
+    font-size: 1rem; font-weight: 300; line-height: 1.8;
+    color: rgba(255,255,255,0.7); max-width: 520px;
+    margin: 0 auto 2.5rem;
+  }
+  .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn-pink {
+    padding: 0.9rem 2.5rem; background: var(--deep-pink); color: var(--white);
+    text-decoration: none; font-size: 0.84rem; font-weight: 500;
+    letter-spacing: 0.06em; border-radius: 30px;
+    box-shadow: 0 6px 20px rgba(196,89,120,0.45); transition: all 0.3s;
+  }
+  .btn-pink:hover { background: var(--dark-pink); transform: translateY(-2px); }
+  .btn-outline {
+    padding: 0.9rem 2.5rem; background: transparent; color: var(--white);
+    text-decoration: none; font-size: 0.84rem; font-weight: 400;
+    letter-spacing: 0.06em; border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 30px; transition: all 0.3s;
+  }
+  .btn-outline:hover { background: rgba(255,255,255,0.08); border-color: var(--rose); }
+
+  .hero-badges {
+    display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;
+    margin-top: 4rem; padding-top: 2.5rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .badge-num { font-family: 'Dancing Script', cursive; font-size: 2.4rem; font-weight: 700; color: var(--rose); display: block; line-height: 1; }
+  .badge-lbl { font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-top: 0.3rem; }
+
+  /* ── TRUST BAR ── */
+  .trust-bar {
+    background: var(--charcoal); padding: 1.2rem 3rem;
+    display: flex; align-items: center; justify-content: center;
+    gap: 3rem; flex-wrap: wrap;
+  }
+  .trust-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.78rem; color: rgba(255,255,255,0.8); }
+  .trust-item .dot { color: var(--pink); font-size: 1rem; }
+
+  /* ── SECTION COMMON ── */
+  .section-wrap { padding: 6rem 3rem; max-width: 1200px; margin: 0 auto; }
+  .section-eyebrow { font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--pink); margin-bottom: 0.6rem; display: block; }
+  .section-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 700; color: var(--charcoal);
+    line-height: 1.15; margin-bottom: 0.75rem;
+  }
+  .section-sub { font-size: 0.88rem; font-weight: 300; line-height: 1.85; color: var(--gray); max-width: 520px; margin-bottom: 3rem; }
+
+  /* ── SERVICES ── */
+  .services-bg { background: var(--soft-white); }
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .service-card {
+    background: var(--white); border-radius: 16px;
+    padding: 2rem 1.75rem; position: relative; overflow: hidden;
+    border: 1px solid var(--blush); transition: all 0.35s;
+    box-shadow: 0 2px 12px rgba(196,89,120,0.06);
+  }
+  .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(196,89,120,0.14); border-color: var(--rose); }
+  .service-card-icon { font-size: 2rem; margin-bottom: 1rem; line-height: 1; }
+  .service-card-name { font-family: 'Dancing Script', cursive; font-size: 1.5rem; font-weight: 700; color: var(--charcoal); margin-bottom: 0.35rem; }
+  .service-card-list { list-style: none; }
+  .service-card-list li { font-size: 0.82rem; font-weight: 300; color: var(--gray); padding: 0.3rem 0; border-bottom: 1px solid var(--blush); display: flex; align-items: center; gap: 0.5rem; }
+  .service-card-list li:last-child { border-bottom: none; }
+  .service-card-list li::before { content: '◇'; color: var(--pink); font-size: 0.5rem; flex-shrink: 0; }
+  .service-tag {
+    display: inline-block; margin-top: 1.25rem;
+    padding: 0.3rem 0.9rem; background: var(--blush);
+    color: var(--deep-pink); font-size: 0.68rem;
+    font-weight: 500; letter-spacing: 0.1em; border-radius: 30px;
+  }
+
+  /* ── ABOUT ── */
+  .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .about-img-box {
+    aspect-ratio: 4/5; border-radius: 24px;
+    background: linear-gradient(145deg, var(--blush) 0%, var(--rose) 100%);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .about-img-placeholder {
+    font-family: 'Dancing Script', cursive;
+    font-size: 6rem; font-weight: 700;
+    color: rgba(196,89,120,0.25); user-select: none;
+  }
+  .about-img-badge {
+    position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
+    background: var(--white); border-radius: 12px;
+    padding: 0.75rem 1.25rem; text-align: center;
+    box-shadow: 0 4px 20px rgba(196,89,120,0.2);
+    white-space: nowrap;
+  }
+  .about-img-badge .badge-school { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--pink); font-weight: 500; }
+  .about-img-badge .badge-name { font-family: 'Dancing Script', cursive; font-size: 1.2rem; font-weight: 700; color: var(--charcoal); margin-top: 1px; }
+  .about-creds { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+  .cred { display: flex; align-items: flex-start; gap: 1rem; padding: 1rem 1.25rem; background: var(--soft-white); border-radius: 12px; border-left: 3px solid var(--pink); }
+  .cred-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 1px; }
+  .cred-title { font-size: 0.84rem; font-weight: 500; color: var(--charcoal); margin-bottom: 0.15rem; }
+  .cred-desc { font-size: 0.78rem; font-weight: 300; color: var(--gray); line-height: 1.5; }
+
+  /* ── INSTAGRAM CTA ── */
+  .insta-band {
+    background: linear-gradient(135deg, var(--deep-pink) 0%, var(--charcoal) 100%);
+    padding: 3.5rem 3rem; text-align: center;
+  }
+  .insta-band h2 { font-family: 'Dancing Script', cursive; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; color: var(--white); margin-bottom: 0.5rem; }
+  .insta-band p { font-size: 0.88rem; color: rgba(255,255,255,0.65); margin-bottom: 1.75rem; }
+  .insta-btn {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    padding: 0.85rem 2.2rem; background: var(--white); color: var(--deep-pink);
+    text-decoration: none; font-size: 0.84rem; font-weight: 600;
+    border-radius: 30px; transition: all 0.3s;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  }
+  .insta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+
+  /* ── BOOKING ── */
+  .booking-bg { background: var(--soft-white); }
+  .booking-inner { max-width: 860px; margin: 0 auto; }
+  .booking-header { text-align: center; margin-bottom: 2.5rem; }
+  .form-box {
+    background: var(--white); border-radius: 20px;
+    border: 1px solid var(--blush); padding: 3rem;
+    box-shadow: 0 8px 40px rgba(196,89,120,0.08);
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+  .form-group { margin-bottom: 1.25rem; }
+  .form-group label {
+    display: block; font-size: 0.68rem; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--charcoal); margin-bottom: 0.4rem;
+  }
+  .form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 0.85rem 1rem;
+    border: 1.5px solid var(--blush);
+    background: var(--soft-white); border-radius: 10px;
+    font-family: 'DM Sans', sans-serif; font-size: 0.85rem;
+    font-weight: 300; color: var(--black); outline: none;
+    transition: border-color 0.3s, background 0.3s;
+    -webkit-appearance: none;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: var(--pink); background: var(--white);
+  }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+
+  .time-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; }
+  .time-chip {
+    padding: 0.6rem 0.4rem; text-align: center;
+    border: 1.5px solid var(--blush); border-radius: 8px;
+    font-size: 0.78rem; color: var(--gray); cursor: pointer;
+    transition: all 0.2s; user-select: none;
+  }
+  .time-chip input { display: none; }
+  .time-chip:has(input:checked) { background: var(--blush); border-color: var(--pink); color: var(--deep-pink); font-weight: 500; }
+  .time-chip:hover { border-color: var(--rose); }
+
+  .btn-book {
+    width: 100%; padding: 1rem;
+    background: linear-gradient(135deg, var(--deep-pink) 0%, var(--dark-pink) 100%);
+    border: none; color: var(--white);
+    font-family: 'DM Sans', sans-serif; font-size: 0.88rem;
+    font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    cursor: pointer; border-radius: 30px; margin-top: 0.5rem;
+    box-shadow: 0 6px 20px rgba(196,89,120,0.35);
+    transition: all 0.3s;
+  }
+  .btn-book:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(196,89,120,0.45); }
+  .btn-book:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+  .form-note { text-align: center; font-size: 0.75rem; color: var(--gray); margin-top: 1rem; line-height: 1.6; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--black); padding: 3rem;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1.5rem;
+  }
+  .footer-brand { font-family: 'Dancing Script', cursive; font-size: 2rem; font-weight: 700; color: var(--rose); line-height: 1; }
+  .footer-info { font-size: 0.78rem; color: rgba(255,255,255,0.4); line-height: 1.9; margin-top: 0.4rem; }
+  .footer-right { text-align: right; font-size: 0.75rem; color: rgba(255,255,255,0.3); line-height: 1.9; }
+
+  /* ── TOAST ── */
+  .toast {
+    position: fixed; bottom: 2rem; right: 2rem;
+    background: var(--charcoal); color: white;
+    padding: 1rem 1.75rem; font-size: 0.82rem;
+    border-left: 4px solid var(--pink); border-radius: 0 10px 10px 0;
+    transform: translateY(100px); opacity: 0;
+    transition: all 0.4s; z-index: 999;
+    max-width: 320px; line-height: 1.5;
+  }
+  .toast.show { transform: translateY(0); opacity: 1; }
+  .toast.error { background: #3d1010; border-left-color: #e07070; }
+
+  /* ── REVEAL ── */
+  .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.65s ease, transform 0.65s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 860px) {
+    nav { padding: 0.9rem 1.25rem; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+
+    .hero { padding: 7rem 1.25rem 4rem; }
+    .hero-badges { gap: 1.75rem; }
+
+    .trust-bar { padding: 1rem 1.25rem; gap: 1.25rem; }
+
+    .section-wrap { padding: 4rem 1.25rem; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+
+    .about-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .about-img-box { max-width: 380px; margin: 0 auto; width: 100%; }
+
+    .insta-band { padding: 3rem 1.5rem; }
+
+    .form-box { padding: 2rem 1.25rem; }
+    .form-row { grid-template-columns: 1fr; gap: 0; }
+    .time-grid { grid-template-columns: repeat(3, 1fr); }
+
+    footer { flex-direction: column; text-align: center; padding: 2.5rem 1.25rem; }
+    .footer-right { text-align: center; }
+  }
+
+  @media (max-width: 560px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .time-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero-badges { justify-content: space-around; }
+    .hero-btns { flex-direction: column; align-items: center; }
+    .btn-pink, .btn-outline { width: 100%; max-width: 280px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-brand">
+    <div class="nav-brand-name">KD Beauty</div>
+    <div class="nav-brand-sub">Licensed Cosmetologist · St. Louis</div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#book" class="nav-cta">Book Now</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Open menu" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" onclick="toggleMenu()" aria-label="Close">✕</button>
+  <div class="mobile-menu-brand">KD Beauty</div>
+  <a href="#services" onclick="toggleMenu()">Services</a>
+  <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#book" class="book-link" onclick="toggleMenu()">Book Now</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="petal"></div><div class="petal"></div><div class="petal"></div>
+  <div class="petal"></div><div class="petal"></div><div class="petal"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">St. Louis, MO &nbsp;·&nbsp; Licensed Cosmetologist</div>
+    <h1 class="hero-title">Beauty is not a<br><span>luxury — it's you.</span></h1>
+    <p class="hero-sub">Hair, nails, lashes, and everything in between. Personalized beauty services in St. Louis with a licensed touch and a whole lot of love.</p>
+    <div class="hero-btns">
+      <a href="#book" class="btn-pink">Book an Appointment</a>
+      <a href="#services" class="btn-outline">See Services</a>
+    </div>
+    <div class="hero-badges">
+      <div><span class="badge-num">✦</span><span class="badge-lbl">Licensed &amp; Certified</span></div>
+      <div><span class="badge-num">Paul Mitchell</span><span class="badge-lbl">School Graduate</span></div>
+      <div><span class="badge-num">St. Louis</span><span class="badge-lbl">Based &amp; Serving You</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><span class="dot">✦</span> Licensed Cosmetologist</div>
+  <div class="trust-item"><span class="dot">✦</span> Paul Mitchell Graduate</div>
+  <div class="trust-item"><span class="dot">✦</span> Hair · Nails · Lashes &amp; More</div>
+  <div class="trust-item"><span class="dot">✦</span> St. Louis, MO</div>
+</div>
+
+<!-- SERVICES -->
+<div class="services-bg">
+<div class="section-wrap" id="services">
+  <div class="reveal">
+    <span class="section-eyebrow">What I Do</span>
+    <h2 class="section-title">Services for every vibe</h2>
+    <p class="section-sub">Whether you want a fresh cut, a full set, or a complete glam session — I've got you covered from head to toe.</p>
+  </div>
+  <div class="services-grid reveal">
+    <div class="service-card">
+      <div class="service-card-icon">💇🏽‍♀️</div>
+      <div class="service-card-name">Hair</div>
+      <ul class="service-card-list">
+        <li>Cuts &amp; Trims</li>
+        <li>Color &amp; Highlights</li>
+        <li>Silk Press / Blowout</li>
+        <li>Braids &amp; Protective Styles</li>
+        <li>Sew-ins &amp; Weaves</li>
+        <li>Relaxers &amp; Treatments</li>
+      </ul>
+      <span class="service-tag">Most Popular</span>
+    </div>
+    <div class="service-card">
+      <div class="service-card-icon">💅🏽</div>
+      <div class="service-card-name">Nails</div>
+      <ul class="service-card-list">
+        <li>Acrylic Full Set</li>
+        <li>Gel Manicure</li>
+        <li>Nail Art &amp; Design</li>
+        <li>Pedicure</li>
+        <li>Dip Powder</li>
+        <li>Fill-ins</li>
+      </ul>
+      <span class="service-tag">Book Now</span>
+    </div>
+    <div class="service-card">
+      <div class="service-card-icon">✨</div>
+      <div class="service-card-name">Beauty</div>
+      <ul class="service-card-list">
+        <li>Lash Extensions</li>
+        <li>Eyebrow Waxing &amp; Shaping</li>
+        <li>Full Face Waxing</li>
+        <li>Scalp Treatments</li>
+        <li>Natural Hair Styling</li>
+        <li>Special Occasion Glam</li>
+      </ul>
+      <span class="service-tag">All Services</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ABOUT -->
+<div class="section-wrap" id="about">
+  <div class="about-inner">
+    <div class="about-img-box reveal">
+      <div class="about-img-placeholder">KD</div>
+      <div class="about-img-badge">
+        <div class="badge-school">Graduate of</div>
+        <div class="badge-name">Paul Mitchell · St. Louis</div>
+      </div>
+    </div>
+    <div class="reveal">
+      <span class="section-eyebrow">About</span>
+      <h2 class="section-title">More than beauty —<br>it's confidence.</h2>
+      <p class="section-sub">I'm a licensed cosmetologist based in St. Louis, MO, trained at the prestigious Paul Mitchell School of St. Louis. My passion is making every client feel their absolute best the moment they walk out the door.</p>
+      <div class="about-creds">
+        <div class="cred">
+          <div class="cred-icon">🎓</div>
+          <div>
+            <div class="cred-title">Paul Mitchell School of St. Louis</div>
+            <div class="cred-desc">Trained at one of the most respected cosmetology schools in the country.</div>
+          </div>
+        </div>
+        <div class="cred">
+          <div class="cred-icon">📋</div>
+          <div>
+            <div class="cred-title">Licensed Cosmetologist — Missouri</div>
+            <div class="cred-desc">Fully licensed and certified to practice cosmetology in the state of Missouri.</div>
+          </div>
+        </div>
+        <div class="cred">
+          <div class="cred-icon">💖</div>
+          <div>
+            <div class="cred-title">Your Look, Your Way</div>
+            <div class="cred-desc">Every service is tailored to you — your style, your needs, your comfort.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INSTAGRAM CTA -->
+<div class="insta-band">
+  <h2>See the work ✨</h2>
+  <p>Follow along on Instagram for looks, transformations, and availability.</p>
+  <a href="https://www.instagram.com/_brandedbeauty_" target="_blank" rel="noopener" class="insta-btn">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+    @_brandedbeauty_
+  </a>
+</div>
+
+<!-- BOOKING -->
+<div class="booking-bg">
+<div class="section-wrap" id="book">
+  <div class="booking-inner">
+    <div class="booking-header reveal">
+      <span class="section-eyebrow">Appointments</span>
+      <h2 class="section-title">Book your appointment</h2>
+      <p style="font-size:0.88rem;color:var(--gray);margin-top:0.4rem;">Fill out the form and I'll confirm your slot within 24 hours. Have questions? Call or text <a href="tel:3147388282" style="color:var(--deep-pink);font-weight:500;">314-738-8282</a>.</p>
+    </div>
+    <div class="form-box reveal">
+      <div class="form-row">
+        <div class="form-group"><label>First Name</label><input type="text" id="fname" placeholder="Jasmine"></div>
+        <div class="form-group"><label>Last Name</label><input type="text" id="lname" placeholder="Williams"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>Email Address</label><input type="email" id="email" placeholder="you@email.com"></div>
+        <div class="form-group"><label>Phone Number</label><input type="tel" id="phone" placeholder="(314) 000-0000"></div>
+      </div>
+      <div class="form-group">
+        <label>Service Requested</label>
+        <select id="service">
+          <option value="">Select a service...</option>
+          <optgroup label="Hair">
+            <option>Cut &amp; Trim</option>
+            <option>Color / Highlights</option>
+            <option>Silk Press / Blowout</option>
+            <option>Braids / Protective Style</option>
+            <option>Sew-in / Weave</option>
+            <option>Relaxer / Treatment</option>
+          </optgroup>
+          <optgroup label="Nails">
+            <option>Acrylic Full Set</option>
+            <option>Gel Manicure</option>
+            <option>Nail Art &amp; Design</option>
+            <option>Pedicure</option>
+            <option>Dip Powder</option>
+            <option>Fill-in</option>
+          </optgroup>
+          <optgroup label="Beauty">
+            <option>Lash Extensions</option>
+            <option>Eyebrow Waxing &amp; Shaping</option>
+            <option>Full Face Waxing</option>
+            <option>Special Occasion Glam</option>
+            <option>Other / Multiple Services</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Preferred Date</label>
+          <input type="date" id="date" min="">
+        </div>
+        <div class="form-group">
+          <label>Alternate Date (optional)</label>
+          <input type="date" id="date2">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Preferred Time Slot</label>
+        <div class="time-grid">
+          <label class="time-chip"><input type="radio" name="time" value="9:00 AM"> 9:00 AM</label>
+          <label class="time-chip"><input type="radio" name="time" value="10:00 AM"> 10:00 AM</label>
+          <label class="time-chip"><input type="radio" name="time" value="11:00 AM"> 11:00 AM</label>
+          <label class="time-chip"><input type="radio" name="time" value="12:00 PM"> 12:00 PM</label>
+          <label class="time-chip"><input type="radio" name="time" value="1:00 PM"> 1:00 PM</label>
+          <label class="time-chip"><input type="radio" name="time" value="2:00 PM"> 2:00 PM</label>
+          <label class="time-chip"><input type="radio" name="time" value="3:00 PM"> 3:00 PM</label>
+          <label class="time-chip"><input type="radio" name="time" value="4:00 PM"> 4:00 PM</label>
+          <label class="time-chip"><input type="radio" name="time" value="5:00 PM"> 5:00 PM</label>
+          <label class="time-chip"><input type="radio" name="time" value="6:00 PM"> 6:00 PM</label>
+          <label class="time-chip"><input type="radio" name="time" value="Evening (flexible)"> Evening</label>
+          <label class="time-chip"><input type="radio" name="time" value="Flexible / Any time"> Flexible</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Additional Notes</label>
+        <textarea id="notes" placeholder="Tell me anything special — inspo pics, hair history, allergies, etc."></textarea>
+      </div>
+      <button class="btn-book" id="bookBtn" onclick="submitBooking()">Request Appointment ✦</button>
+      <p class="form-note">This sends a booking request. I'll text or email you within 24 hours to confirm.<br>Questions? Text <a href="tel:3147388282" style="color:var(--deep-pink);">314-738-8282</a></p>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-brand">KD Beauty</div>
+    <div class="footer-info">
+      St. Louis, Missouri<br>
+      <a href="tel:3147388282" style="color:rgba(255,255,255,0.4);text-decoration:none;">314-738-8282</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.instagram.com/_brandedbeauty_" target="_blank" style="color:rgba(255,255,255,0.4);text-decoration:none;">@_brandedbeauty_</a>
+    </div>
+  </div>
+  <div class="footer-right">
+    <div>&copy; 2026 KD Beauty. All rights reserved.</div>
+    <div>Licensed Cosmetologist · St. Louis, MO</div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  // Set min date to today
+  const today = new Date().toISOString().split('T')[0]
+  document.getElementById('date').setAttribute('min', today)
+  document.getElementById('date2').setAttribute('min', today)
+
+  // Mobile menu
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu')
+    const btn  = document.getElementById('hamburger')
+    const open = menu.classList.toggle('open')
+    btn.classList.toggle('open', open)
+    document.body.style.overflow = open ? 'hidden' : ''
+  }
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal')
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target) } })
+  }, { threshold: 0.08 })
+  reveals.forEach(r => observer.observe(r))
+
+  // Toast
+  function showToast(msg, isError) {
+    const t = document.getElementById('toast')
+    t.textContent = msg
+    t.className = 'toast' + (isError ? ' error' : '') + ' show'
+    setTimeout(() => t.classList.remove('show'), 5500)
+  }
+
+  // Submit booking
+  async function submitBooking() {
+    const fname   = document.getElementById('fname').value.trim()
+    const lname   = document.getElementById('lname').value.trim()
+    const email   = document.getElementById('email').value.trim()
+    const phone   = document.getElementById('phone').value.trim()
+    const service = document.getElementById('service').value
+    const date    = document.getElementById('date').value
+    const date2   = document.getElementById('date2').value
+    const time    = document.querySelector('input[name="time"]:checked')?.value || ''
+    const notes   = document.getElementById('notes').value.trim()
+
+    if (!fname || !email) { showToast('Please enter your name and email.', true); return }
+    if (!service)         { showToast('Please select a service.', true); return }
+    if (!date)            { showToast('Please select a preferred date.', true); return }
+
+    const btn = document.getElementById('bookBtn')
+    btn.disabled = true
+    btn.textContent = 'Sending...'
+
+    try {
+      const res = await fetch('/api/book', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ fname, lname, email, phone, service, date, date2, time, notes }),
+      })
+      if (res.ok) {
+        showToast('✓ Booking request sent! I\'ll confirm within 24 hours.')
+        document.querySelectorAll('#book input:not([type="radio"]), #book select, #book textarea').forEach(el => el.value = '')
+        document.querySelectorAll('input[name="time"]').forEach(el => el.checked = false)
+      } else {
+        showToast('Something went wrong. Please try again or text 314-738-8282.', true)
+      }
+    } catch {
+      showToast('Something went wrong. Please text 314-738-8282 to book.', true)
+    } finally {
+      btn.disabled = false
+      btn.textContent = 'Request Appointment ✦'
+    }
+  }
+</script>
+</body>
+</html>
